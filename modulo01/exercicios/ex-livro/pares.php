@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="../style.css">    
     <title>Sorteando 1000</title>
 </head>
-<style>
-    *{
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    }
-</style>
 <body>
     <main>
         <h1>Mostrando apenas <strong>Pares</strong></h1>

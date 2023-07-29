@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
     <title>Jogo de Dados</title>
 </head>
 <body>
     <!-- Mostrar quantas vezes cada uma das faces foi sorteada-->
-    <h1>Jogo de Dados</h1>
+    <header>
+        <h1>Jogo de Dados</h1>
+    </header>
     <main>
+        <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
+        <label for="roladas">Quantas roladas você quer?</label>
+        <input type="number" name="roladas" id="roladas">
+        <input type="submit" value="Rolar">
+        </form>
     <?php 
-    
+    $roladas = $_GET["roladas"] ?? false;
     $lado1 = 0;
     $lado2 = 0;
     $lado3 = 0;
@@ -18,7 +26,7 @@
     $lado5 = 0;
     $lado6 = 0;
     $indice = 1;
-    while ($indice <= 20) {
+    while ($indice <= $roladas) {
 
         $lado = rand(1,6);
         if ($lado==1){
@@ -43,7 +51,7 @@
         
         echo "<img src='dados/dado-lado-". $lado.".jpg' alt='dado'>";
     } 
-        echo "<p>Ao todo foram encontrado os seguintes resultados</p>";
+        echo "<p>Após $roladas roladas, foram encontrados os seguintes resultados:</p>";
         echo "<ul>
             <li>Número 1x $lado1</li>    
             <li>Número 2x $lado2</li>    
